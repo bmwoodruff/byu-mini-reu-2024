@@ -1,0 +1,150 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5432,        142]
+NotebookOptionsPosition[      5090,        128]
+NotebookOutlinePosition[      5478,        144]
+CellTagsIndexPosition[      5435,        141]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "p", ",", "sols", ",", "complexNumbers", ",", "magnitudes", ",", "max", 
+      ",", "points"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"p", "[", 
+       RowBox[{"z_", ",", "a_"}], "]"}], ":=", 
+      RowBox[{
+       RowBox[{"z", "^", "5"}], "+", 
+       RowBox[{"a", " ", 
+        RowBox[{
+         RowBox[{"Conjugate", "[", "z", "]"}], "^", "4"}]}], "-", "1"}]}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"Manipulate", "[", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"Step", " ", "1"}], ":", 
+        RowBox[{
+        "Prepare", " ", "your", " ", "list", " ", "of", " ", "complex", " ", 
+         "numbers"}]}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"sols", " ", "=", " ", 
+         RowBox[{
+          RowBox[{"Solve", "[", 
+           RowBox[{
+            RowBox[{"p", "[", 
+             RowBox[{"z", ",", "a"}], "]"}], "==", "0"}], "]"}], "//", 
+          "N"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"complexNumbers", "=", 
+         RowBox[{"z", "/.", "sols"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"magnitudes", "=", 
+         RowBox[{"Abs", "/@", "complexNumbers"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"max", " ", "=", " ", 
+         RowBox[{"Max", "[", "magnitudes", "]"}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", "\n", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"Step", " ", "2"}], ":", 
+          RowBox[{
+          "Extract", " ", "real", " ", "and", " ", "imaginary", " ", 
+           "parts"}]}], "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"points", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Re", "[", "#", "]"}], ",", 
+             RowBox[{"Im", "[", "#", "]"}]}], "}"}], "&"}], "/@", 
+          "complexNumbers"}]}], ";", "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"Step", " ", "3"}], ":", 
+          RowBox[{
+          "Use", " ", "ListPlot", " ", "to", " ", "create", " ", "the", " ", 
+           "plot"}]}], "*)"}], "\n", 
+        RowBox[{"ListPlot", "[", 
+         RowBox[{"points", ",", 
+          RowBox[{"PlotStyle", "->", 
+           RowBox[{"{", 
+            RowBox[{"Red", ",", 
+             RowBox[{"PointSize", "[", "Medium", "]"}]}], "}"}]}], ",", 
+          RowBox[{"AxesLabel", "->", 
+           RowBox[{"{", 
+            RowBox[{"\"\<Re\>\"", ",", "\"\<Im\>\""}], "}"}]}], ",", 
+          RowBox[{"PlotRange", "->", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"-", "max"}], ",", "max"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"-", "max"}], ",", "max"}], "}"}]}], "}"}]}], ",", 
+          RowBox[{"GridLines", "->", "Automatic"}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"a", ",", "1"}], "}"}], ",", 
+         RowBox[{"1", "/", "2"}], ",", "5", ",", 
+         RowBox[{"1", "/", "100"}]}], "}"}]}], "]"}]}]}], "]"}], 
+  "\n"}]], "Input",
+ CellChangeTimes->{{3.928242844162363*^9, 3.928242887439722*^9}, {
+   3.928242936450637*^9, 3.9282429483520184`*^9}, {3.928243034863142*^9, 
+   3.9282432159621153`*^9}, {3.9282436170694036`*^9, 3.928243649482841*^9}, 
+   3.928243680777926*^9, {3.928243734994382*^9, 3.9282437962211437`*^9}, {
+   3.928243843549108*^9, 3.928243872375415*^9}, {3.92824394840139*^9, 
+   3.928243995643968*^9}, 3.928244030450779*^9, {3.928244348340125*^9, 
+   3.928244389621441*^9}, {3.928244442074524*^9, 3.928244487780065*^9}, 
+   3.9282482484161777`*^9, {3.928248374367517*^9, 3.9282484326196117`*^9}, {
+   3.928248502599371*^9, 3.928248543743187*^9}, {3.9282485885997553`*^9, 
+   3.9282486243941917`*^9}, {3.928248713089864*^9, 3.928248778377452*^9}, {
+   3.928248855738908*^9, 3.9282489101427917`*^9}, {3.928249106711501*^9, 
+   3.928249129270524*^9}, 3.92824945339402*^9, {3.928249496811285*^9, 
+   3.928249625869741*^9}, {3.9282496974316797`*^9, 3.928249703910458*^9}, {
+   3.928249735280245*^9, 3.928249738832238*^9}, {3.928249780322855*^9, 
+   3.928249782252923*^9}, {3.928249813645369*^9, 3.928249814008153*^9}, {
+   3.928250533083885*^9, 3.928250549431364*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"07c5ae1a-6480-4c4d-b433-2877a89d9032"]
+},
+WindowSize->{1440, 762},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.3 for Linux x86 (64-bit) (June 3, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"dff82e25-4e1b-41c0-bdc0-98d5ea1d0f97"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4528, 106, 337, "Input",ExpressionUUID->"07c5ae1a-6480-4c4d-b433-2877a89d9032"]
+}
+]
+*)
+
