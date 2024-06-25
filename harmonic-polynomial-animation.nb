@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      5432,        142]
-NotebookOptionsPosition[      5090,        128]
-NotebookOutlinePosition[      5478,        144]
-CellTagsIndexPosition[      5435,        141]
+NotebookDataLength[      5669,        145]
+NotebookOptionsPosition[      5327,        131]
+NotebookOutlinePosition[      5715,        147]
+CellTagsIndexPosition[      5672,        144]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -36,13 +36,11 @@ Cell[BoxData[
         RowBox[{
          RowBox[{"Conjugate", "[", "z", "]"}], "^", "4"}]}], "-", "1"}]}], 
      ";", "\[IndentingNewLine]", 
-     RowBox[{"Manipulate", "[", 
+     RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
       RowBox[{"(*", 
        RowBox[{
-        RowBox[{"Step", " ", "1"}], ":", 
-        RowBox[{
-        "Prepare", " ", "your", " ", "list", " ", "of", " ", "complex", " ", 
-         "numbers"}]}], "*)"}], "\[IndentingNewLine]", 
+       "Prepare", " ", "your", " ", "list", " ", "of", " ", "complex", " ", 
+        "numbers"}], "*)"}], "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{
         RowBox[{"sols", " ", "=", " ", 
@@ -54,18 +52,20 @@ Cell[BoxData[
           "N"}]}], ";", "\[IndentingNewLine]", 
         RowBox[{"complexNumbers", "=", 
          RowBox[{"z", "/.", "sols"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Find", " ", "largest", " ", "modulus", " ", "for", " ", "viewing", 
+          " ", "window"}], "*)"}], "\[IndentingNewLine]", 
         RowBox[{"magnitudes", "=", 
          RowBox[{"Abs", "/@", "complexNumbers"}]}], ";", 
         "\[IndentingNewLine]", 
         RowBox[{"max", " ", "=", " ", 
          RowBox[{"Max", "[", "magnitudes", "]"}]}], ";", 
-        "\[IndentingNewLine]", "\[IndentingNewLine]", "\n", 
+        "\[IndentingNewLine]", 
         RowBox[{"(*", 
          RowBox[{
-          RowBox[{"Step", " ", "2"}], ":", 
-          RowBox[{
-          "Extract", " ", "real", " ", "and", " ", "imaginary", " ", 
-           "parts"}]}], "*)"}], "\[IndentingNewLine]", 
+         "Extract", " ", "real", " ", "and", " ", "imaginary", " ", "parts"}],
+          "*)"}], "\[IndentingNewLine]", 
         RowBox[{"points", "=", 
          RowBox[{
           RowBox[{
@@ -74,19 +74,17 @@ Cell[BoxData[
              RowBox[{"Re", "[", "#", "]"}], ",", 
              RowBox[{"Im", "[", "#", "]"}]}], "}"}], "&"}], "/@", 
           "complexNumbers"}]}], ";", "\[IndentingNewLine]", 
-        "\[IndentingNewLine]", 
         RowBox[{"(*", 
          RowBox[{
-          RowBox[{"Step", " ", "3"}], ":", 
-          RowBox[{
-          "Use", " ", "ListPlot", " ", "to", " ", "create", " ", "the", " ", 
-           "plot"}]}], "*)"}], "\n", 
+         "Use", " ", "ListPlot", " ", "to", " ", "create", " ", "the", " ", 
+          "plot"}], "*)"}], "\[IndentingNewLine]", 
         RowBox[{"ListPlot", "[", 
          RowBox[{"points", ",", 
           RowBox[{"PlotStyle", "->", 
            RowBox[{"{", 
             RowBox[{"Red", ",", 
-             RowBox[{"PointSize", "[", "Medium", "]"}]}], "}"}]}], ",", 
+             RowBox[{"PointSize", "[", "Large", "]"}]}], "}"}]}], ",", 
+          RowBox[{"ImageSize", "->", "800"}], ",", 
           RowBox[{"AxesLabel", "->", 
            RowBox[{"{", 
             RowBox[{"\"\<Re\>\"", ",", "\"\<Im\>\""}], "}"}]}], ",", 
@@ -101,11 +99,13 @@ Cell[BoxData[
                RowBox[{"-", "max"}], ",", "max"}], "}"}]}], "}"}]}], ",", 
           RowBox[{"GridLines", "->", "Automatic"}]}], "]"}]}], ",", 
        "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"Set", " ", "manipulate", " ", "parameter"}], "*)"}], 
+       "\[IndentingNewLine]", 
        RowBox[{"{", 
         RowBox[{
          RowBox[{"{", 
-          RowBox[{"a", ",", "1"}], "}"}], ",", 
-         RowBox[{"1", "/", "2"}], ",", "5", ",", 
+          RowBox[{"a", ",", "1"}], "}"}], ",", "1", ",", "2", ",", 
          RowBox[{"1", "/", "100"}]}], "}"}]}], "]"}]}]}], "]"}], 
   "\n"}]], "Input",
  CellChangeTimes->{{3.928242844162363*^9, 3.928242887439722*^9}, {
@@ -123,8 +123,11 @@ Cell[BoxData[
    3.928249625869741*^9}, {3.9282496974316797`*^9, 3.928249703910458*^9}, {
    3.928249735280245*^9, 3.928249738832238*^9}, {3.928249780322855*^9, 
    3.928249782252923*^9}, {3.928249813645369*^9, 3.928249814008153*^9}, {
-   3.928250533083885*^9, 3.928250549431364*^9}},
- CellLabel->"In[29]:=",ExpressionUUID->"07c5ae1a-6480-4c4d-b433-2877a89d9032"]
+   3.928250533083885*^9, 3.928250549431364*^9}, {3.9283203036704893`*^9, 
+   3.928320334490694*^9}, {3.9283204011633043`*^9, 3.928320433757513*^9}, {
+   3.92832052978039*^9, 
+   3.9283206506999197`*^9}},ExpressionUUID->"07c5ae1a-6480-4c4d-b433-\
+2877a89d9032"]
 },
 WindowSize->{1440, 762},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
@@ -143,7 +146,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 4528, 106, 337, "Input",ExpressionUUID->"07c5ae1a-6480-4c4d-b433-2877a89d9032"]
+Cell[558, 20, 4765, 109, 337, "Input",ExpressionUUID->"07c5ae1a-6480-4c4d-b433-2877a89d9032"]
 }
 ]
 *)
